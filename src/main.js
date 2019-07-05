@@ -21,6 +21,8 @@ $(document).ready(function () {
     promise.then(function (response) {
       let results = JSON.parse(response);
       console.log(results);
+      $('span.doctor-result').text(`The Doctor's name is: ${results.data[0].profile.first_name} ${results.data[0].profile.last_name}`);
+
     });
   });
 });
