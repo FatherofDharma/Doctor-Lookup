@@ -23,9 +23,9 @@ $(document).ready(function () {
       console.log(results);
       $('#doctor-info').empty();
       for (let i =0; i < results.data.length; i++) {
-        $('#doctor-info').append('<br>').append(`Doctor:   ${results.data[i].profile.first_name}   ${results.data[i].profile.last_name}
-        ${results.data[i].profile.title} Address:       ${results.data[i].practices[0].visit_address.street}
-        ${results.data[i].practices[0].visit_address.zip} Accepting new patients:   ${results.data[i].practices[0].accepts_new_patients}  Phone: ${results.data[i].practices[0].phones[0].number}`);
+        $('#doctor-info').append('<br>').append('<li>' + `Doctor: ${results.data[i].profile.first_name}   ${results.data[i].profile.last_name} Title: 
+        ${results.data[i].profile.title} Address: ${results.data[i].practices[0].visit_address.street}
+        ${results.data[i].practices[0].visit_address.zip} Accepting new patients:   ${results.data[i].practices[0].accepts_new_patients}  Phone: ${results.data[i].practices[0].phones[0].number}` + '</li>');
       }
     });
   });
