@@ -13,7 +13,7 @@ $(document).ready(function () {
     const inputtedMedicalIssue = $('input#medical-issue').val();
     $('input#first-name').val('');
     $('input#last-name').val('');
-    $('input#medical-issue').val();
+    $('input#medical-issue').val('');
 
     let docRequest = new DoctorRequest();
     let promise = docRequest.getDoctorInfo(inputtedFirstName, inputtedLastName, inputtedMedicalIssue);
@@ -21,9 +21,10 @@ $(document).ready(function () {
     promise.then(function (response) {
       let results = JSON.parse(response);
       console.log(results);
-      $('span.doctor-result').text(`The Doctor's name is: ${results.data[0].profile.first_name} ${results.data[0].profile.last_name} Address: ${results.data[0].practices[0].visit_address.street}
-      ${results.data[0].practices[0].visit_address.zip} Is accepting new patients: ${results.data[0].practices[0].accepts_new_patients} Phone: ${results.data[0].practices[0].phones[0].number}`);
-
+      for (let i =0; i < results.data.length; i++) {
+        $('span.doctor-result').append('<br>').append(`The Doctor's name is:   ${results.data[i].profile.first_name}   ${results.data[i].profile.last_name} Address:   ${results.data[i].practices[0].visit_address.street}
+        ${results.data[i].practices[0].visit_address.zip} Is  accepting new patients:   ${results.data[i].practices[0].accepts_new_patients}  Phone: ${results.data[i].practices[0].phones[0].number}`);
+      }
     });
   });
 });
