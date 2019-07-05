@@ -1,10 +1,11 @@
 # Doctor Lookup
 
-A website that looks up Doctors in the Portland area, based on specific medical conditions entered bu the user.
+A website that looks up Doctors in the Portland area, based on specific medical conditions entered by the user.
 #### By Daniel Hongel. Created initially on July 5th, 2019.
 
 ## Description
 
+This program is the 6th independent project for the coding school, Epicodus. The project uses API calls to return information on doctors in the Portland area that are related to the users medical issue or name requests.
 
 ## Specs
 
