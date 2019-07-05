@@ -21,7 +21,7 @@ module.exports = {
       title: 'Doctor lookup',
       template: './src/index.html',
       inject: 'body'
-    })
+    }),
     new Dotenv()
   ],
   module: {
