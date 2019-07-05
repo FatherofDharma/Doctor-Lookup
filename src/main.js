@@ -22,6 +22,9 @@ $(document).ready(function () {
       let results = JSON.parse(response);
       console.log(results);
       $('#doctor-info').empty();
+      if(results.data.length === 0) {
+        $('#doctor-info').text(`There are 0 results for your search. Please try again.`)
+      }
       for (let i =0; i < results.data.length; i++) {
         $('#doctor-info').append('<br>').append('<ui>' + `Doctor: ${results.data[i].profile.first_name}   ${results.data[i].profile.last_name} Title:
         ${results.data[i].profile.title}`);
