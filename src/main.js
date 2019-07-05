@@ -1,7 +1,7 @@
 import './styles.css';
 import $ from 'jquery';
 import 'bootstrap';
-import { DoctorRequest } './doctor.js';
+import { DoctorRequest } from './doctor.js';
 
 console.log(process.env.exports.apiKey);
 
@@ -11,11 +11,16 @@ $(document).ready(function () {
     const inputtedFirstName = $('input#first-name').val();
     const inputtedLastName = $('input#last-name').val();
     const inputtedMedicalIssue = $('input#medical-issue').val();
-    console.log(inputtedFirstName);
-    console.log(inputtedLastName);
-    console.log(inputtedMedicalIssue);
     $('input#first-name').val('');
     $('input#last-name').val('');
     $('input#medical-issue').val();
-  })
+
+    let docRequest = new DoctorRequest();
+    let promise = docRequest.getDoctorInfo(inputtedFirstName, inputtedLastName, inputtedMedicalIssue);
+
+    promise.then(function (response) {
+      let results = JSON.parse(response);
+      console.log(results);
+    });
+  });
 });
