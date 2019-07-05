@@ -21,7 +21,8 @@ $(document).ready(function () {
     promise.then(function (response) {
       let results = JSON.parse(response);
       console.log(results);
-      $('span.doctor-result').text(`The Doctor's name is: ${results.data[0].profile.first_name} ${results.data[0].profile.last_name}`);
+      $('span.doctor-result').text(`The Doctor's name is: ${results.data[0].profile.first_name} ${results.data[0].profile.last_name} Address: ${results.data[0].practices[0].visit_address.street}
+      ${results.data[0].practices[0].visit_address.zip} Is accepting new patients: ${results.data[0].practices[0].accepts_new_patients}`);
 
     });
   });
