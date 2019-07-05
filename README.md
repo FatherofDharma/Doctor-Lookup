@@ -50,6 +50,7 @@ If you encounter any issues using this software, have comments or suggestions, o
 * jquery
 * webpack and plugins
 * Karma and Jasmine
+* Betterdoctor API
 
 ### License
 
