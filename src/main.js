@@ -26,7 +26,7 @@ $(document).ready(function () {
         $('#doctor-info').append('<br>').append('<ui>' + `Doctor: ${results.data[i].profile.first_name}   ${results.data[i].profile.last_name} Title:
         ${results.data[i].profile.title}`);
         if (results.data[i].practices.length > 0) {
-          for (let x=0; i <results.data[i].practices.length; x++) {
+          for (let x=0; x <results.data[i].practices.length; x++) {
             $('#doctor-info').append('<br>').append('<li>' + `Address: ${results.data[i].practices[x].visit_address.street}
             ${results.data[i].practices[x].visit_address.zip} Accepting new patients:   ${results.data[i].practices[x].accepts_new_patients}  Phone: ${results.data[i].practices[x].phones[0].number}` + '</li>');
           }
