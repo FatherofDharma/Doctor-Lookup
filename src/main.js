@@ -1,7 +1,7 @@
 import './styles.css';
-import './doctor.js';
 import $ from 'jquery';
 import 'bootstrap';
+import { DoctorRequest } './doctor.js';
 
 console.log(process.env.exports.apiKey);
 
