@@ -52,6 +52,7 @@ If you encounter any issues using this software, have comments or suggestions, o
 * Karma and Jasmine
 * Betterdoctor API
 
+<!-- Update to use embedded licence later -->
 ### License
 
 This software is license under the MIT license.
